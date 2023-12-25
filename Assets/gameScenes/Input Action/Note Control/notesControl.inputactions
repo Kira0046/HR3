@@ -1,0 +1,106 @@
+{
+    "name": "notesControl",
+    "maps": [
+        {
+            "name": "notes",
+            "id": "eaec752c-4463-46ca-a8e0-f4ee32cd4cb9",
+            "actions": [
+                {
+                    "name": "left notes",
+                    "type": "Button",
+                    "id": "52fceb2b-0799-4663-bb2f-633267068a41",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "down notes",
+                    "type": "Button",
+                    "id": "4e64038a-65a7-407d-b449-3e4eff0fb50f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "up notes",
+                    "type": "Button",
+                    "id": "047bf6b7-cf2f-48ae-ad2c-93d60415cb7b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "right notes",
+                    "type": "Button",
+                    "id": "0266e03c-8a7d-4da5-a170-c23ebd79d746",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5236fa85-56ee-4d61-89cf-b416ffa727c9",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "left notes",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5b51e8fc-e720-442a-be93-20958a8cca35",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "down notes",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "22bef532-5332-47dc-9665-954d522e2a0e",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "up notes",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5049aa83-4df0-4ca9-97ad-e356586b000c",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "right notes",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
