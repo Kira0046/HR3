@@ -35,6 +35,6 @@ public class RebindManager : MonoBehaviour
 
     private void Enter(InputAction.CallbackContext context)
     {
-        SceneManager.LoadScene("stage");
+        SceneManager.LoadScene("gameScene");
     }
 }
