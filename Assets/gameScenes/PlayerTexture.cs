@@ -20,10 +20,6 @@ public class PlayerTexture : MonoBehaviour
     bool right = false;
     float transPosetime = 0.0f;
 
-    //const string UP_TEXTURE = "Character/up";
-    //const string DOWN_TEXTURE = "Character/down";
-    //const string RIGHT_TEXTURE = "Character/right";
-    //const string LEFT_TEXTURE = "Character/left";
 
     private Sprite spriteDown;
     private Sprite spriteLeft;

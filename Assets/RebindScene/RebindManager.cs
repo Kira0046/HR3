@@ -20,7 +20,7 @@ public class RebindManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MenuControl();
+        //MenuControl();
     }
 
     private void OnDestroy()
@@ -34,6 +34,11 @@ public class RebindManager : MonoBehaviour
     }
 
     private void Enter(InputAction.CallbackContext context)
+    {
+        SceneManager.LoadScene("gameScene");
+    }
+
+    public void onGame()
     {
         SceneManager.LoadScene("gameScene");
     }
