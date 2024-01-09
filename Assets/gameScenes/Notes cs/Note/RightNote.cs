@@ -34,18 +34,21 @@ public class RightNote : MonoBehaviour
         SpriteRenderer spriteOb = spriteObject.GetComponent<SpriteRenderer>();
         spriteOb.sprite = sprite;
         //ロングノーツ
-        //GameObject longspriteObject = GameObject.Find("RightlongNote");
-        //Sprite longsprite = Resources.Load<Sprite>(LongBASE_TEXTURE);
-
-        //SpriteRenderer longspriteOb = longspriteObject.GetComponent<SpriteRenderer>();
-        //longspriteOb.sprite=longsprite;
+        string longpath = "Assets/Resource/NoteTexture/rightlong.png";
+        byte[] longimagedata = File.ReadAllBytes(longpath);
+        Texture2D longtexture = new(2, 2);
+        longtexture.LoadImage(longimagedata);
+        Sprite longsprite=Sprite.Create(longtexture,new Rect(0,0,longtexture.width,longtexture.height), mid);
+        GameObject longspriteObject = GameObject.Find("RightlongNote");
+        SpriteRenderer longspriteOb=longspriteObject.GetComponent<SpriteRenderer>();
+        longspriteOb.sprite = longsprite;
 
         //ラストロングノーツ
-        GameObject finspriteObject = GameObject.Find("RightlongfinNote");
-        Sprite finsprite = Resources.Load<Sprite>(FinBASE_TEXTURE);
+        //GameObject finspriteObject = GameObject.Find("RightlongfinNote");
+        //Sprite finsprite = Resources.Load<Sprite>(FinBASE_TEXTURE);
 
-        SpriteRenderer finspriteOb = finspriteObject.GetComponent<SpriteRenderer>();
-        finspriteOb.sprite=finsprite;
+        //SpriteRenderer finspriteOb = finspriteObject.GetComponent<SpriteRenderer>();
+        //finspriteOb.sprite=finsprite;
     }
 
     public void Test()

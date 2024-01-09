@@ -40,6 +40,9 @@ public class RebindManager : MonoBehaviour
 
     public void onGame()
     {
-        SceneManager.LoadScene("gameScene");
+        GameObject gameObject = GameObject.Find("endboard");
+        Endboard endboardscript=gameObject.GetComponent<Endboard>();
+        endboardscript.moveflag = true;
+        //SceneManager.LoadScene("gameScene");
     }
 }

@@ -9,7 +9,7 @@ public class MenuUI : MonoBehaviour
     public GameObject startblackboard;
     public GameObject endblackboard;
 
-    Vector3 move = new(-10.0f, 0.0f, 0.0f);
+    Vector3 move = new(-20.0f, 0.0f, 0.0f);
     PlayUI playscript;
     EditUI editscript;
     public bool moveflag = false;

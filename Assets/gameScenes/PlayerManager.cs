@@ -49,6 +49,7 @@ public class PlayerManager : MonoBehaviour
     bool upuselongnote = false;
     bool rightuselongnote = false;
 
+    //ノーツリスト
     List<GameObject> NoteList = new();
     List<GameObject> LeftLongNoteList = new();
     List<GameObject> DownLongNoteList = new();
