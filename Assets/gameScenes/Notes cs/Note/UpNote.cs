@@ -12,11 +12,9 @@ public class UpNote : MonoBehaviour
     public int longtime = 0;
     //private int laneindex = 2;
 
-    //const string BASE_TEXTURE = "NoteTexture/up";
-    //const string LongBASE_TEXTURE = "NoteTexture/longup";
-    const string FinBASE_TEXTURE = "NoteTexture/finup";
 
-    //private NotesControl _notesControl;
+
+
     // Start is called before the first frame update
 
     private void Awake()
@@ -46,11 +44,14 @@ public class UpNote : MonoBehaviour
         longspriteOb.sprite = longsprite;
 
         //ラストロングノーツ
-        //GameObject finspriteObject = GameObject.Find("UplongfinNote");
-        //Sprite finsprite = Resources.Load<Sprite>(FinBASE_TEXTURE);
-
-        //SpriteRenderer finspriteOb = finspriteObject.GetComponent<SpriteRenderer>();
-        //finspriteOb.sprite=finsprite;
+        string finlongpath = "Assets/Resource/NoteTexture/upfinlong.png";
+        byte[] finlongimagedata = File.ReadAllBytes(finlongpath);
+        Texture2D finlongtexture = new(2, 2);
+        finlongtexture.LoadImage(finlongimagedata);
+        Sprite finlongsprite = Sprite.Create(finlongtexture, new Rect(0, 0, finlongtexture.width, finlongtexture.height), mid);
+        GameObject finlongspriteObject = GameObject.Find("UplongfinNote");
+        SpriteRenderer finlongspriteOb = finlongspriteObject.GetComponent<SpriteRenderer>();
+        finlongspriteOb.sprite = finlongsprite;
     }
 
     public void Test()

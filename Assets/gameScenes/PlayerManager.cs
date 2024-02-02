@@ -95,20 +95,8 @@ public class PlayerManager : MonoBehaviour
         public List<NoteData> NoteData;
     }
 
-    void Awake()
+    public void Awake()
     {
-        //サイズ設定
-        Screen.SetResolution(1280, 720, false);
-
-        //fps制限
-        QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = 60;
-
-        //NoteObject = GameObject.Find("LeftNote");
-        //NoteScript = NoteObject.GetComponent<LeftNote>();
-        //Debug.Log(NoteScript.speed);
-
-
         //Input System 有効化
         _LeftactionRef.action.Enable();
         _DownactionRef.action.Enable();
@@ -121,7 +109,7 @@ public class PlayerManager : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         ///ノーツ作成
         LoadJson();

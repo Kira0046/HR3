@@ -44,11 +44,14 @@ public class RightNote : MonoBehaviour
         longspriteOb.sprite = longsprite;
 
         //ラストロングノーツ
-        //GameObject finspriteObject = GameObject.Find("RightlongfinNote");
-        //Sprite finsprite = Resources.Load<Sprite>(FinBASE_TEXTURE);
-
-        //SpriteRenderer finspriteOb = finspriteObject.GetComponent<SpriteRenderer>();
-        //finspriteOb.sprite=finsprite;
+        string finlongpath = "Assets/Resource/NoteTexture/rightfinlong.png";
+        byte[] finlongimagedata = File.ReadAllBytes(finlongpath);
+        Texture2D finlongtexture = new(2, 2);
+        finlongtexture.LoadImage(finlongimagedata);
+        Sprite finlongsprite = Sprite.Create(finlongtexture, new Rect(0, 0, finlongtexture.width, finlongtexture.height), mid);
+        GameObject finlongspriteObject = GameObject.Find("RightlongfinNote");
+        SpriteRenderer finlongspriteOb = finlongspriteObject.GetComponent<SpriteRenderer>();
+        finlongspriteOb.sprite = finlongsprite;
     }
 
     public void Test()

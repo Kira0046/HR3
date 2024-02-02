@@ -34,18 +34,24 @@ public class DownNote : MonoBehaviour
         SpriteRenderer spriteOb = spriteObject.GetComponent<SpriteRenderer>();
         spriteOb.sprite=sprite;
         //ロングノーツ
-        //GameObject longspriteObject = GameObject.Find("DownlongNote");
-        //Sprite longsprite = Resources.Load<Sprite>(LongBASE_TEXTURE);
-
-        //SpriteRenderer longspriteOb = longspriteObject.GetComponent<SpriteRenderer>();
-        //longspriteOb.sprite=longsprite;
+        string longpath = "Assets/Resource/NoteTexture/downlong.png";
+        byte[] longimagedata = File.ReadAllBytes(longpath);
+        Texture2D longtexture = new(2, 2);
+        longtexture.LoadImage(longimagedata);
+        Sprite longsprite = Sprite.Create(longtexture, new Rect(0, 0, longtexture.width, longtexture.height), mid);
+        GameObject longspriteObject = GameObject.Find("DownlongNote");
+        SpriteRenderer longspriteOb = longspriteObject.GetComponent<SpriteRenderer>();
+        longspriteOb.sprite = longsprite;
 
         //ラストロングノーツ
-        GameObject finspriteObject = GameObject.Find("DownlongfinNote");
-        Sprite finsprite = Resources.Load<Sprite>(FinBASE_TEXTURE);
-
-        SpriteRenderer finspriteOb = finspriteObject.GetComponent<SpriteRenderer>();
-        finspriteOb.sprite=finsprite;
+        string finlongpath = "Assets/Resource/NoteTexture/downfinlong.png";
+        byte[] finlongimagedata = File.ReadAllBytes(finlongpath);
+        Texture2D finlongtexture = new(2, 2);
+        finlongtexture.LoadImage(finlongimagedata);
+        Sprite finlongsprite = Sprite.Create(finlongtexture, new Rect(0, 0, finlongtexture.width, finlongtexture.height), mid);
+        GameObject finlongspriteObject = GameObject.Find("DownlongfinNote");
+        SpriteRenderer finlongspriteOb = finlongspriteObject.GetComponent<SpriteRenderer>();
+        finlongspriteOb.sprite = finlongsprite;
 
     }
 
