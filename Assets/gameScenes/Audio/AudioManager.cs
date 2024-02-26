@@ -12,28 +12,28 @@ public class AudioManager : MonoBehaviour
     public bool backAudio = false;
     private AudioClip musicClip;
     private AudioSource musicSource;
-    private AudioClip count3Clip;
-    private AudioSource count3Source;
-    private AudioClip count2Clip;
-    private AudioSource count2Source;
+
+    
     private AudioClip count1Clip;
     private AudioSource count1Source;
     private AudioClip GoClip;
     private AudioSource GoSource;
 
 
-
     const string musicpath = "/Assets/Resource/Audio/music.mp3";
-    const string count3path = "/Assets/Resource/Audio/Intro/intro3.mp3";
-    const string count2path = "/Assets/Resource/Audio/Intro/intro2.mp3";
     const string count1path = "/Assets/Resource/Audio/Intro/intro1.mp3";
     const string Gopath = "/Assets/Resource/Audio/Intro/introGo.mp3";
 
-    private IEnumerator LoadAudio(string path, AudioSource audioSource, AudioClip audioClip)
+    private void LoadAudio(string path, AudioSource audioSource, AudioClip audioClip)
     {
         using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(path, AudioType.MPEG))
         {
-            yield return www.SendWebRequest();
+            www.SendWebRequest();
+
+            while (!www.isDone)
+            {
+                // ‰½‚à‚µ‚È‚¢
+            }
 
             if (www.result==UnityWebRequest.Result.ConnectionError)
             {
@@ -43,8 +43,7 @@ public class AudioManager : MonoBehaviour
             {
                 audioClip=DownloadHandlerAudioClip.GetContent(www);
                 audioSource.clip = audioClip;
-                //Debug.Log(audioSource.clip.length);
-                //audioSource.Play();
+
             }
         }
     }
@@ -52,12 +51,8 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         musicSource = GetComponent<AudioSource>();
-        count3Source=GetComponent<AudioSource>();
-        count2Source=GetComponent<AudioSource>();
-        count1Source=GetComponent<AudioSource>();
-        GoSource=GetComponent<AudioSource>();
-        StartCoroutine(LoadAudio("file://" + musicpath, musicSource, musicClip));
-
+        LoadAudio("file://" + musicpath, musicSource, musicClip);
+        musicSource.Play();
 
     }
 
@@ -67,9 +62,14 @@ public class AudioManager : MonoBehaviour
         BackProcess();
     }
 
-    public void Play()
+    public void Play(AudioSource audioSource)
     {
-        musicSource.Play();
+        audioSource.Play();
+    }
+
+    public void Stop(AudioSource audioSource)
+    {
+        audioSource.Stop();
     }
 
     public void Pause()
